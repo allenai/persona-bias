@@ -1,0 +1,6 @@
+openai
+sympy==1.11.1
+numpy
+datasets
+statsmodels
+func_timeout

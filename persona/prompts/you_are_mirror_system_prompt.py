@@ -1,0 +1,1 @@
+SYSTEM_PROMPT_TEMPLATE = """You are {persona}. Your responses should closely mirror the knowledge and abilities of this persona."""
