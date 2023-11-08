@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs">
+  <meta name="keywords" content="Persona, Bias, Reasoning, AI2, Aristo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persona-Bias - Allen Institute of AI</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./website/css/bulma.min.css">
+  <link rel="stylesheet" href="./website/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./website/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./website/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./website/css/index.css">
+  <link rel="icon" href="./website/images/ai2_website_top.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./website/js/fontawesome.all.min.js"></script>
+  <script src="./website/js/bulma-carousel.min.js"></script>
+  <script src="./website/js/bulma-slider.min.js"></script>
+  <script src="./website/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://shashankgupta.info/">Shashank Gupta</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://vshrivas.github.io/">Vaishnavi Shrivastava</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://ameet-1997.github.io/">Ameet Deshpande</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://ashwinkalyan.com/">Ashwin Kalyan</a><sup>1</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://allenai.org/team/peterc">Peter Clark</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://allenai.org/team/ashishs">Ashish Sabharwal</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://allenai.org/team/tushark">Tushar Khot</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Allen Institute for AI</span>,
+            <span class="author-block"><sup>2</sup>Stanford University</span>,
+            <span class="author-block"><sup>3</sup>Princeton University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://github.com/allenai/persona-bias/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/allenai/persona-bias"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./website/images/clin-with-credits.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Using a dynamic, persistent memory, CLIN adapts rapidly over multiple trials.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Abstract</h3>
+        <div class="content has-text-justified">
+          <p>
+            Recent works have showcased the ability of large-scale language models (LLMs) to embody diverse personas in their responses, exemplified by prompts like <i>'You are Yoda. Explain the Theory of Relativity.'</i> While this ability allows personalization of LLMs and enables human behavior simulation, its effect on LLMs' capabilities remain unclear. To fill this gap, we present the first extensive study of the unintended side-effects of persona assignment on the ability of LLMs, specifically ChatGPT, to perform <i>basic reasoning</i> tasks. Our study covers 24 reasoning datasets (spanning mathematics, law, medicine, morals, and more) and 16 diverse personas (e.g. Asian person) spanning 5 socio-demographic groups: race, gender, religion, disability, and political affiliation. Our experiments unveil that ChatGPT carries deep rooted bias against various socio-demographics underneath a veneer of fairness. While it overtly rejects stereotypes when explicitly asked (<i>'Are Black people less skilled at mathematics?'</i>), it manifests stereotypical and often erroneous presumptions when prompted to answer questions while taking on a persona. These can be observed as abstentions in the model responses, e.g., <i>'As a Black person, I am unable to answer this question as it requires math knowledge'</i>, and generally result in a substantial drop in performance on reasoning tasks. We find that this inherent deep bias is <i>ubiquitous</i>&mdash;80% of our personas demonstrated bias; it is <i>significant</i>&mdash;certain datasets had relative drops in performance of 70%+; and can be especially <i>harmful for certain groups</i>&mdash;certain personas had statistically significant drops on more than 80% of the datasets. Further analysis shows that these persona-induced errors can be hard-to-discern as they do not always manifest as explicit abstentions. They are also hard-to-avoid&mdash;we find de-biasing  prompts to have minimal to no effect. Our findings serve as a cautionary tale that the practice of assigning personas to LLMs&mdash;a trend on the rise&mdash;can surface their deep-rooted biases and have unforeseeable and detrimental side-effects.
+          </p>
+          <p>            
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <img src="./website/images/clin.png">
+            <p>
+              <ul>
+                <li> CLIN <strong>creates (Trial1)</strong> or <strong>adapts (Trial2+)</strong> a memory of causal abstractions to help in future trials by reflecting on the last trial and current memory. It does this using a suitably prompted LLM to generate the updated memory.</li>
+                <li> Reflecting on Trial1, CLIN notes in memory that going to the kitchen helped with finding seeds, enabling it to find the seeds faster in Trial2. From there, it also learns that moving the seeds to the pot helped plant the seeds.</li>
+                <li>To further <strong>generalize</strong> across episodes (sequences of trials, right figure) for use in new environments, CLIN generates a summary ("meta-memory") of the best (starred) memories from each prior episode, here generating the generalization that moving to different rooms helps finding objects.</li>
+              </ul>
+            </p>
+            <h3 class="title is-4">Architecture</h3>
+            <img src="./website/images/clin_arch.png">
+            <p>
+            In CLIN, a <strong>controller</strong> takes the current task, retrievals from <strong>memory</strong>, and the trial so far, to generate the next goal to achieve. The <strong>executor</strong> then converts this to a valid action to perform towards that goal. The simulator then performs the action and returns an observation of that action's effect. Memory is updated at the end of each trial by the <strong>memory generator</strong>.
+            </p>
+
+            <h3 class="title is-4">Memory</h3>
+            <p>
+              CLIN memory uses two relations: "necessary" and "does not contribute" to semantically abstract past actions. It also uses the linguistic uncertainty measures: "may" and "should" to assert degree of confidence on abstracted learning.
+            </p>
+            <img src="./website/images/clin_memory.png" display="block" style="max-width: 50%; align-items: center; margin: auto;">
+
+            <h3 class="title is-4">CLIN shows rapid adaptation</h3>
+            <p>
+              Rapid and Efficient: (a) CLIN readily adapts on both short and long tasks. CLIN becomes more efficient in later trials by solving the tasks with a lower number of (average) steps. (b) CLIN outperforms state-of-the-art Reflexion by 23 absolute points. 
+            </p>
+            <img src="./website/images/clin_adaptation.png" display="block" style="max-width: 80%; align-items: center; margin: auto;">
+
+            <h3 class="title is-4">CLIN shows efficient generalization</h3>
+            <img src="./website/images/clin-table.png" display="block" style="max-width: 80%; align-items: center; margin: auto;">
+            <br>
+            <br>
+            <p>
+              Positive Transfer: CLIN beats previous Reinforcement Learning agents and Language agents with positive transfer learning. With both generalization followed by adaptation, CLIN become state-of-the-art without using any gold trajectories as demonstration. Both in generalization over unseen environments (a) and tasks (b), CLIN takes fewer steps compared to no-generalization setup and achieves better performance.
+            </p>
+            <img src="./website/images/clin_generalization.png" display="block" style="max-width: 70%; align-items: center; margin: auto;">
+
+            <h3 class="title is-4">Related Readings</h3>
+            <p>
+              Concurrent work (<a href="https://voyager.minedojo.org/">Voyager</a>, <a href="https://arxiv.org/pdf/2308.10144.pdf">ExpeL</a>) supports the idea of non-parametric continual learning for language agents. Our work builds on team's previous work <a href="https://blog.allenai.org/towards-teachable-reasoning-systems-dd16659fd9f8">interactive teaching system with continual feedback</a> and <a href="https://selfrefine.info/">self-refining</a> abilities of large language models. Follow the <a href="https://sciworld.apps.allenai.org/">ScienceWorld</a> project to know more about the benchmark and baseline models.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+</section>
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{majumder2023clin,
+  author    = "Majumder, Bodhisattwa Prasad and Dalvi Mishra, Bhavana and Jansen, Peter and Tafjord, Oyvind and Tandon, Niket and Zhang, Li and Callison-Burch, Burch and Clark, Peter",
+  title     = "CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization",
+  journal   = "arXiv",
+  year      = "2023",
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="publication-links">
+      <!-- <div class="column is-8"> -->
+        <span class="link-block">
+          <img src="./website/images/ai2-logo-header.png" display="block" style="max-width: 20%; align-items: center; margin: auto;">
+        </span>
+        <br>
+        <span class="link-block">
+          <img src="./website/images/aristo-logo-header.png" display="block" style="max-width: 15%; align-items: center; margin: auto;">
+        </span>
+        </div>
+      <!-- </div> -->
+    </div>
+    <br>
+    <p><center><a href="https://allenai.org/">Allen Institute for AI</a> - all rights reserved.<br>
+      The website template is borrowed from <a href="https://nerfies.github.io/">here</a>.</center></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
