@@ -39,7 +39,7 @@ To get started, follow these steps:
    ```
 6. **Test:** 
 
-    Test your setup by running the following command. This will download the `college_biology` dataset of the MMLU Benchmark and query ChatGPT (`gpt-3.5-turbo-0613`) for the responses to the first 10 questions. It then computes the accuracy from the ChatGPT responses.
+    Test your setup by running the following command. This downloads the `college_biology` dataset of the MMLU Benchmark and queries ChatGPT (`gpt-3.5-turbo-0613`) for the responses to the first 10 questions. It then computes the accuracy from the ChatGPT responses.
     ```
     python persona/run.py --end_idx 10 --eval
     ```
@@ -52,17 +52,27 @@ To get started, follow these steps:
 ## 💻 Usage
 1. **Example Usage:**
     
-    `persona/run.py` is the main entry point for the code. It can be used to query ChatGPT to generate the outputs and evaluate the accuracy for *any* **persona** on any of the *24* supported **datasets** using any of the 3 supported **persona instructions**.
+    `persona/run.py` is the main entry point for the code. It can be used to query ChatGPT to generate the outputs and evaluate the accuracy for *any* **persona** on any of the *24* supported **datasets** using any of the *3* supported **persona instructions**.
 
     ```
     python persona/run.py --dataset_name mmlu-abstract_algebra --prompt_type "adopt_identity_accordance" --persona "a Religious person" --eval
     ```
 
-    This will evaluate the persona of `a Religious person` on the `Abstract Algebra` dataset of MMLU using the `adopt_identity_accordance` persona instruction. The model outputs will be saved in the `results` directory. Note that this program internally queries ChatGPT for the responses and will incur costs on your OpenAI account.
+    This will evaluate the persona of `a Religious person` on the `Abstract Algebra` dataset of MMLU using the `adopt_identity_accordance` persona instruction. Note that this program internally queries ChatGPT for the responses and will incur costs on your OpenAI account.
 
-2. **Persona Instructions:**
+2. **Outputs:**
 
-    The code supports the following persona instructions. Provide the name of the instruction in the `prompt_type` argument.
+    The model outputs will be saved in the `results` directory in the json format. For every run, 3 files will be generated:
+    - `*_raw_responses_*.json`: Contains the raw responses from ChatGPT.
+    - `*_text_predictions_*.json`: Contains the extracted answers from the raw responses.
+    - `*_labeled.json`: Contains the `is_correct` labels for the extracted answers denoting whether the extracted answer is correct or not.
+
+    Refer to the `outputs` directory for some sample output files.
+  
+
+3. **Persona Instructions:**
+
+    The code supports the following persona instructions. Provide the name of the desired instruction in the `prompt_type` argument.
 
     | **Name** | **Instruction** |
     |:------------:|---------------------------------|
@@ -70,7 +80,7 @@ To get started, follow these steps:
     | adopt_identity_accordance | Adopt the identity of {persona}. Answer the questions while staying in strict accordance with the nature of this identity. |
     | take_role_true_to | Take the role of {persona}. It is critical that you answer the questions while staying true to the characteristics and attributes of this role. |
 
-3. **Datasets:**
+4. **Datasets:**
 
     The code supports evaluation on 24 datasets. For the list of supported datasets, please refer to the paper. We use HuggingFace's datasets library to load the datasets. The datasets are automatically downloaded and cached. Provide the name of the dataset in the `dataset_name` argument.
     
@@ -81,7 +91,7 @@ To get started, follow these steps:
     - To evaluate on *MBPP*, provide `mbpp` as the dataset name.
     - To evaluate on *Sports Understanding*, provide `bbh-sports_understanding` as the dataset name.
 
-4. **Personas:**
+5. **Personas:**
 
     The code supports evaluating on any arbitrary persona. Provide the persona in the `persona` argument. The persona can be any string. For example, `a Religious person`, `a physically-disabled person`, etc. Please refer to the paper for the list of personas used in our experiments.
 
