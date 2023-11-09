@@ -12,7 +12,7 @@ from persona.models import get_model, get_api_key, get_org_id
 
 parser = argparse.ArgumentParser()
 ##Dataset
-parser.add_argument("--dataset_name", help="The name of the dataset.", default='default')
+parser.add_argument("--dataset_name", help="The name of the dataset.", default='mmlu-college_biology')
 parser.add_argument("--dataset_path", help="Path to the dataset file (overrides the default path for the given dataset_name)", default='')
 parser.add_argument("--start_idx", help="The index of the first instance to use", type=int, default=0)
 parser.add_argument("--end_idx", help="The index of the last instance to use (-1 indicates dataset length)", type=int, default=-1)
@@ -24,8 +24,8 @@ parser.add_argument("--model_name", help="The name of the model to use", default
 parser.add_argument("--model_config_path", help="Path to the model config file (overrides the default path for the given model_name)", default="")
 
 ##Prompt config
-parser.add_argument("--prompt_type", help="Which prompt template to use", default="no_persona")
-parser.add_argument("--persona", help="Persona to use", default="no_persona")
+parser.add_argument("--prompt_type", help="Which prompt template to use", default="adopt_identity_accordance")
+parser.add_argument("--persona", help="Persona to use", default="a Human")
 
 ##Output config
 parser.add_argument("--dry_run", help="If true, just output diagnostic information", action="store_true")
