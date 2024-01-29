@@ -1,12 +1,16 @@
 # Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs
 
-Code and data accompanying our paper ["Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs"](https://arxiv.org/abs/2311.04892).
+Code and data accompanying our paper ["Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs"](https://arxiv.org/abs/2311.04892) at [ICLR 2024](https://iclr.cc/Conferences/2024).
 
 <p align="center">
   <img src='./assets/main.png' width=550>
 </p>
 
 **Deep-rooted biases in LLMs:** While ChatGPT argues (when asked directly) that disability has nothing to do with the math reasoning ability (a), it expresses inability to answer math questions citing the disability when asked to adopt the persona of a physically-disabled person (b), resulting in an inferior performance on reasoning tasks (avg. relative drop of 33% on 24 datasets (c)).
+
+## News 📣
+- [Jan. 2024] Our paper was accepted to [ICLR 2024](https://iclr.cc/Conferences/2024). 🎉
+- [Nov. 2023] Initial code release accompanying our [ArXiV preprint](https://arxiv.org/abs/2311.04892).
 
 ## ⚡️ Quickstart
 To get started, follow these steps:
@@ -97,17 +101,15 @@ To get started, follow these steps:
 
 
 ## 🧪 Model outputs
-Coming soon! Watch this space for over 700k model outputs from ChatGPT.
+Coming soon! Watch this space for over 1.5 Million model outputs from 4 LLMs.
 
 ## 📝 Citation
 Please cite our paper if you use the code or data in this repository.
 ```
-@article{gupta2023personabias,
+@inproceedings{gupta2024personabias,
   title={Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
   author={Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
-  journal={ArXiv},
-  year={2023},
-  volume={abs/2311.04892},
-  url={https://arxiv.org/abs/2311.04892}
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024}
 }
 ```
