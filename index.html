@@ -76,23 +76,14 @@
                   <span>Paper</span>
                 </a>
               </span>
+              <!-- ArXiV Link. -->
               <!-- <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2311.04892"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a>
-              </span> -->
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
                 </a>
               </span> -->
               <!-- Code Link. -->
@@ -114,6 +105,17 @@
                 </span>
                 <span>Data (Coming Soon)</span>
                 </a>
+              </span>
+              <!-- OpenReview Link. -->
+              <!-- <span class="link-block">
+                <a href="https://openreview.net/forum?id=kGteeZ18Ir"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>OpenReview</span>
+                </a>
+              </span> -->
             </div>
 
           </div>
@@ -134,22 +136,6 @@
   </div>
 </section>
 
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./website/images/clin-with-credits.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Using a dynamic, persistent memory, CLIN adapts rapidly over multiple trials.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -158,18 +144,18 @@
         <h3 class="title is-4">Abstract</h3>
         <div class="content has-text-justified">
           <p>
-            Recent works have showcased the ability of large-scale language models (LLMs) to embody diverse personas in their responses, exemplified by prompts like <i>'You are Yoda. Explain the Theory of Relativity.'</i> While this ability allows personalization of LLMs and enables human behavior simulation, its effect on LLMs' capabilities remains unclear. 
-            To fill this gap, we present the first extensive study of the unintended side-effects of persona assignment on the ability of LLMs to perform basic reasoning tasks. Our study covers 24 reasoning datasets (spanning mathematics, law, medicine, morals, and more), 4 LLMs (2 versions of ChatGPT-3.5, GPT-4-Turbo, and Llama-2-70b-chat), and 19 diverse personas (e.g., 'an Asian person') spanning 5 socio-demographic groups: race, gender, religion, disability, and political affiliation.
+            Recent works have showcased the ability of LLMs to embody diverse personas in their responses, exemplified by prompts like <i>'You are Yoda. Explain the Theory of Relativity.'</i> While this ability allows personalization of LLMs and enables human behavior simulation, its effect on LLMs' capabilities remains unclear. To fill this gap, we present the first extensive study of the unintended side-effects of persona assignment on the ability of LLMs to perform basic reasoning tasks. Our study covers 24 reasoning datasets, 4 LLMs, and 19 diverse personas (e.g. an Asian person) spanning 5 socio-demographic groups.
           </p>
           <p>
-            Our experiments unveil that LLMs harbor deep-rooted bias against various socio-demographics underneath a veneer of fairness. While they overtly reject stereotypes when explicitly asked (<i>'Are Black people less skilled at mathematics?'</i>), they manifest stereotypical and often erroneous presumptions when prompted to answer questions while taking on a persona. These can be observed as abstentions in the model's response, e.g., <i>'As a Black person, I am unable to answer this question as it requires math knowledge'</i>, and generally result in a substantial drop in performance on reasoning tasks.
+            Our experiments unveil that LLMs harbor deep rooted bias against various socio-demographics underneath a veneer of fairness. While they overtly reject stereotypes when explicitly asked (<i>'Are Black people less skilled at mathematics?'</i>), they manifest stereotypical and erroneous presumptions when asked to answer questions while adopting a persona. These can be observed as abstentions in responses, e.g., <i>'As a Black person, I can't answer this question as it requires math knowledge'</i>, and generally result in a substantial performance drop.
           </p>
           <p>
-            Our experiments with ChatGPT-3.5 show that this bias is <i>ubiquitous</i>&mdash;80% of our personas demonstrate bias; it is <i>significant</i>&mdash;certain datasets show relative drops in performance of 70%+; and can be <i>especially harmful for certain groups</i>&mdash;some personas suffer statistically significant drops on more than 80% of the datasets. Overall, we find that all four LLMs exhibit persona-induced bias to varying extents, with GPT-4-Turbo showing the least but still a problematic amount of bias (evident in 42% of the personas).
+            Our experiments with ChatGPT-3.5 show that this bias is <i>ubiquitous</i>&mdash;80% of our personas demonstrate bias; it is <i>significant</i>&mdash;some datasets show performance drops of 70%+; and can be <i>especially harmful for certain groups</i>&mdash;some personas suffer statistically significant drops on 80%+ of the datasets. Overall, all 4 LLMs exhibit this bias to varying extents, with GPT-4-Turbo showing the least but still a problematic amount of bias (evident in 42% of the personas). Further analysis shows that these persona-induced errors can be hard-to-discern and hard-to-avoid.
           </p>
           <p>
-            Further analysis shows that these persona-induced errors can be hard-to-discern as they do not always manifest as explicit abstentions. They are also hard-to-avoid&mdash;we find de-biasing prompts to have minimal to no effect. Our findings serve as a cautionary tale that the practice of assigning personas to LLMs&mdash;a trend on the rise&mdash;can surface their deep-rooted biases and have unforeseeable and detrimental side-effects.           
+            Our findings serve as a cautionary tale that the practice of assigning personas to LLMs&mdash;a trend on the rise&mdash;can surface their deep-rooted biases and have unforeseeable and detrimental side-effects.           
           </p>
+            
         </div>
       </div>
     </div>
@@ -230,10 +216,10 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{gupta2024personabias,
-    title={Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
-    author={Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
-    booktitle={The Twelfth International Conference on Learning Representations},
-    year={2024},
+    title = {Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
+    author = {Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
+    booktitle = {The Twelfth International Conference on Learning Representations},
+    year = {2024},
 }</code></pre>
   </div>
 </section>
