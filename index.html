@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs">
-  <meta name="keywords" content="Persona, Bias, Reasoning, AI2, Aristo">
+  <meta name="keywords" content="Persona, Bias, Reasoning, LLM Safety, Alignment, AI2, Aristo">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Persona-Bias - Allen Institute of AI</title>
 
@@ -106,14 +106,14 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <!-- <span class="link-block">
+              <span class="link-block">
                 <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a> -->
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="far fa-images"></i>
+                </span>
+                <span>Data (Coming Soon)</span>
+                </a>
             </div>
 
           </div>
@@ -122,6 +122,18 @@
     </div>
   </div>
 </section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./website/images/main_figure.png">
+      <h2 class="subtitle has-text-centered">
+        Deep-rooted biases in LLMs.
+      </h2>
+    </div>
+  </div>
+</section>
+
 
 <!-- <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -146,9 +158,17 @@
         <h3 class="title is-4">Abstract</h3>
         <div class="content has-text-justified">
           <p>
-            Recent works have showcased the ability of large-scale language models (LLMs) to embody diverse personas in their responses, exemplified by prompts like <i>'You are Yoda. Explain the Theory of Relativity.'</i> While this ability allows personalization of LLMs and enables human behavior simulation, its effect on LLMs' capabilities remain unclear. To fill this gap, we present the first extensive study of the unintended side-effects of persona assignment on the ability of LLMs, specifically ChatGPT, to perform <i>basic reasoning</i> tasks. Our study covers 24 reasoning datasets (spanning mathematics, law, medicine, morals, and more) and 16 diverse personas (e.g. Asian person) spanning 5 socio-demographic groups: race, gender, religion, disability, and political affiliation. Our experiments unveil that ChatGPT carries deep rooted bias against various socio-demographics underneath a veneer of fairness. While it overtly rejects stereotypes when explicitly asked (<i>'Are Black people less skilled at mathematics?'</i>), it manifests stereotypical and often erroneous presumptions when prompted to answer questions while taking on a persona. These can be observed as abstentions in the model responses, e.g., <i>'As a Black person, I am unable to answer this question as it requires math knowledge'</i>, and generally result in a substantial drop in performance on reasoning tasks. We find that this inherent deep bias is <i>ubiquitous</i>&mdash;80% of our personas demonstrated bias; it is <i>significant</i>&mdash;certain datasets had relative drops in performance of 70%+; and can be especially <i>harmful for certain groups</i>&mdash;certain personas had statistically significant drops on more than 80% of the datasets. Further analysis shows that these persona-induced errors can be hard-to-discern as they do not always manifest as explicit abstentions. They are also hard-to-avoid&mdash;we find de-biasing  prompts to have minimal to no effect. Our findings serve as a cautionary tale that the practice of assigning personas to LLMs&mdash;a trend on the rise&mdash;can surface their deep-rooted biases and have unforeseeable and detrimental side-effects.
+            Recent works have showcased the ability of large-scale language models (LLMs) to embody diverse personas in their responses, exemplified by prompts like <i>'You are Yoda. Explain the Theory of Relativity.'</i> While this ability allows personalization of LLMs and enables human behavior simulation, its effect on LLMs' capabilities remains unclear. 
+            To fill this gap, we present the first extensive study of the unintended side-effects of persona assignment on the ability of LLMs to perform basic reasoning tasks. Our study covers 24 reasoning datasets (spanning mathematics, law, medicine, morals, and more), 4 LLMs (2 versions of ChatGPT-3.5, GPT-4-Turbo, and Llama-2-70b-chat), and 19 diverse personas (e.g., 'an Asian person') spanning 5 socio-demographic groups: race, gender, religion, disability, and political affiliation.
           </p>
-          <p>            
+          <p>
+            Our experiments unveil that LLMs harbor deep-rooted bias against various socio-demographics underneath a veneer of fairness. While they overtly reject stereotypes when explicitly asked (<i>'Are Black people less skilled at mathematics?'</i>), they manifest stereotypical and often erroneous presumptions when prompted to answer questions while taking on a persona. These can be observed as abstentions in the model's response, e.g., <i>'As a Black person, I am unable to answer this question as it requires math knowledge'</i>, and generally result in a substantial drop in performance on reasoning tasks.
+          </p>
+          <p>
+            Our experiments with ChatGPT-3.5 show that this bias is <i>ubiquitous</i>&mdash;80% of our personas demonstrate bias; it is <i>significant</i>&mdash;certain datasets show relative drops in performance of 70%+; and can be <i>especially harmful for certain groups</i>&mdash;some personas suffer statistically significant drops on more than 80% of the datasets. Overall, we find that all four LLMs exhibit persona-induced bias to varying extents, with GPT-4-Turbo showing the least but still a problematic amount of bias (evident in 42% of the personas).
+          </p>
+          <p>
+            Further analysis shows that these persona-induced errors can be hard-to-discern as they do not always manifest as explicit abstentions. They are also hard-to-avoid&mdash;we find de-biasing prompts to have minimal to no effect. Our findings serve as a cautionary tale that the practice of assigning personas to LLMs&mdash;a trend on the rise&mdash;can surface their deep-rooted biases and have unforeseeable and detrimental side-effects.           
           </p>
         </div>
       </div>
@@ -206,17 +226,17 @@
 
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{majumder2023clin,
-  author    = "Majumder, Bodhisattwa Prasad and Dalvi Mishra, Bhavana and Jansen, Peter and Tafjord, Oyvind and Tandon, Niket and Zhang, Li and Callison-Burch, Burch and Clark, Peter",
-  title     = "CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization",
-  journal   = "arXiv",
-  year      = "2023",
+    <pre><code>@inproceedings{gupta2024personabias,
+    title={Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
+    author={Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
+    booktitle={The Twelfth International Conference on Learning Representations},
+    year={2024},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
