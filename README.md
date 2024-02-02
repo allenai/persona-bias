@@ -101,7 +101,7 @@ To get started, follow these steps:
 
 
 ## 🧪 Model outputs
-Coming soon! Watch this space for over 1.5 Million model outputs from 4 LLMs.
+Coming soon! Watch [https://huggingface.co/datasets/allenai/persona-bias] (https://huggingface.co/datasets/allenai/persona-bias) for over 1.5 Million model outputs from 4 LLMs.
 
 ## 📝 Citation
 Please cite our paper if you use the code or data in this repository.
