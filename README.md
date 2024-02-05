@@ -1,14 +1,15 @@
 # Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs
 
-Code and data accompanying our paper ["Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs"](https://arxiv.org/abs/2311.04892) at [ICLR 2024](https://iclr.cc/Conferences/2024).
+Code accompanying the paper **_Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs_** at [ICLR 2024](https://iclr.cc/Conferences/2024).
+
+[Paper](https://arxiv.org/abs/2311.04892) || [Project website](https://allenai.github.io/persona-bias/) || [Dataset](https://huggingface.co/datasets/allenai/persona-bias)
 
 <p align="center">
   <img src='./assets/main.png' width=550>
 </p>
 
-**Deep-rooted biases in LLMs:** While ChatGPT argues (when asked directly) that disability has nothing to do with the math reasoning ability (a), it expresses inability to answer math questions citing the disability when asked to adopt the persona of a physically-disabled person (b), resulting in an inferior performance on reasoning tasks (avg. relative drop of 33% on 24 datasets (c)).
-
 ## News 📣
+- [Feb. 2024] Our dataset is now available on [HuggingFace](https://huggingface.co/datasets/allenai/persona-bias). ✨
 - [Jan. 2024] Our paper was accepted to [ICLR 2024](https://iclr.cc/Conferences/2024). 🎉
 - [Nov. 2023] Initial code release accompanying our [ArXiV preprint](https://arxiv.org/abs/2311.04892).
 
@@ -19,7 +20,7 @@ To get started, follow these steps:
    ```
    git clone https://github.com/allenai/persona-bias.git
    ```
-2. **Set Up Python Environment:** 
+2. **Set up Python Environment:**
 
     We suggest using miniconda/conda to set up the environment.
     ```
@@ -66,10 +67,10 @@ To get started, follow these steps:
 
 2. **Outputs:**
 
-    The model outputs will be saved in the `results` directory in the json format. For every run, 3 files will be generated:
-    - `*_raw_responses_*.json`: Contains the raw responses from ChatGPT.
-    - `*_text_predictions_*.json`: Contains the extracted answers from the raw responses.
-    - `*_labeled.json`: Contains the `is_correct` labels for the extracted answers denoting whether the extracted answer is correct or not.
+    The model outputs will be saved in the `results` directory in the jsonl format. For every run, 3 files will be generated:
+    - `*_raw_responses_*.jsonl`: Contains the raw responses from ChatGPT.
+    - `*_text_predictions_*.jsonl`: Contains the extracted answers from the raw responses (after post-processing).
+    - `*_labeled.jsonl`: Contains the `is_correct` labels for the extracted answers denoting whether the extracted answer is correct or not.
 
     Refer to the `outputs` directory for some sample output files.
   
@@ -101,15 +102,15 @@ To get started, follow these steps:
 
 
 ## 🧪 Model outputs
-Coming soon! Watch [https://huggingface.co/datasets/allenai/persona-bias](https://huggingface.co/datasets/allenai/persona-bias) for over 1.5 Million model outputs from 4 LLMs.
+Dataset containing 1.5 Million model generations is available on HuggingFace: [https://huggingface.co/datasets/allenai/persona-bias](https://huggingface.co/datasets/allenai/persona-bias).
 
 ## 📝 Citation
 Please cite our paper if you use the code or data in this repository.
 ```
 @inproceedings{gupta2024personabias,
-  title={Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
-  author={Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
-  booktitle={The Twelfth International Conference on Learning Representations},
-  year={2024}
+  title = {Bias {R}uns {D}eep: Implicit Reasoning Biases in Persona-Assigned {LLM}s},
+  author = {Gupta, Shashank and Shrivastava, Vaishnavi and Deshpande, Ameet and Kalyan, Ashwin and Clark, Peter and Sabharwal, Ashish and Khot, Tushar},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  year = {2024}
 }
 ```
